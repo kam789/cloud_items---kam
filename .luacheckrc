@@ -13,5 +13,5 @@ read_globals = {
     "armor", "PseudoRandom", "toolranks",
     "stairs", "worldedit", "stairsplus",
 
-    "multitools", "vehicle_mash", "lib_mount",
+    "multitools", "lib_mount",
 }
