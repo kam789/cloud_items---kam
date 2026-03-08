@@ -45,6 +45,7 @@ minetest.register_node("cloud_items:cloudblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+--[[
 minetest.register_node("cloud_items:decoration_block", {
 	description = S("Cloud decoration Block"),
 	tiles = {"cloud_items_decorationblock.png"},
@@ -53,6 +54,7 @@ minetest.register_node("cloud_items:decoration_block", {
 	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
+--]]
 
 minetest.register_node("cloud_items:cloud", {
 	description = S("Cloud (no drops)"),
@@ -152,6 +154,7 @@ if not minetest.get_modpath("moreblocks") and minetest.get_modpath("stairs") the
 	stairs.register_slab("cloud", recipe, groups, images, S("Cloud Slab"),
 		sounds, true)
 
+	--[[
 	-- Decorative cloud block
 	recipe = "cloud_items:decoration_block"
 	groups = {cracky = 1, level = 3}
@@ -166,6 +169,7 @@ if not minetest.get_modpath("moreblocks") and minetest.get_modpath("stairs") the
 		sounds, true, S("Outer decorative cloud Stair"))
 	stairs.register_slab("cloud_decorative_block", recipe, groups, images, S("Decorative cloud Slab"),
 		sounds, true)
+	--]]
 end
 
 -- Moreblocks support
@@ -187,7 +191,8 @@ if minetest.get_modpath("moreblocks") then
 		light_source = 5,
 		sounds = default.node_sound_stone_defaults()
 	})
-
+	
+	--[[
 	-- Decorative cloud block
 	stairsplus:register_all("cloud_items", "decoration_block", "cloud_items:decoration_block", {
 		description = S("Decorative cloud"),
@@ -196,6 +201,7 @@ if minetest.get_modpath("moreblocks") then
 		light_source = 5,
 		sounds = default.node_sound_stone_defaults()
 	})
+	--]]
 end
 
 -------------
@@ -513,92 +519,6 @@ if minetest.get_modpath("multitools") then
 )
 end
 
-------------------
--- Cloud ship --
-------------------
-
--- Code is taken and modified from the Vehicle Mash (https://github.com/minetest-mods/vehicle_mash) mod (WTFPL license).
--- See the mod license (https://github.com/minetest-mods/vehicle_mash/blob/master/LICENSE.md) for more information.
-local ship_def = {
-	terrain_type = 3,
-	max_speed_forward = 10,
-	max_speed_reverse = 7,
-	max_speed_upwards = 5,
-	max_speed_downwards = 3.5,
-
-	accel = 4,
-	braking = 5,
-	turn_speed = 6,
-	stepheight = 1.5,
-	-- model specific stuff
-	visual = "mesh",
-	visual_size = {x=1, y=1},
-	wield_scale = {x=1, y=1, z=1},
-	collisionbox = {-2.3, -0.3, -2, 2.5, 1.9, 2},
-	can_fly = true,
-	enable_crash = false,
-	onplace_position_adj = 0,
-	textures = {"default_cloud.png"},
-	-- player specific stuff
-	player_rotation = {x=0, y=0, z=0},
-	driver_attach_at = {x=-0.6, y=19, z=0},
-	driver_eye_offset = {x=-0.6, y=19, z=0},
-	number_of_passengers = 0
-}
-
--- Cloud ship (based on the Vehicle Mash boat)
-local ship_enabled = minetest.settings:get_bool("cloud_items.enable_cloud_ship")
-if ship_enabled or ship_enabled == nil then
-	loadfile(minetest.get_modpath(minetest.get_current_modname()) .. "/ship.lua")(table.copy(ship_def))
-end
-
-----------------
--- Cloud car --
-----------------
-
--- Code is taken and modified from the Vehicle Mash (https://github.com/minetest-mods/vehicle_mash) mod (WTFPL license).
--- See the mod license (https://github.com/minetest-mods/vehicle_mash/blob/master/LICENSE.md) for more information.
-local car_def = {
-		terrain_type = 1,
-		max_speed_forward = 13,
-		max_speed_reverse = 10,
-		accel = 4,
-		braking = 6,
-		turn_speed = 4,
-		stepheight = 1.3,
-
-		visual = "mesh",
-		mesh = "car.x", -- Model is from the Vehicle Mash mod; licensed under CC BY-NC-SA 3.0
-		visual_size = {x=1, y=1},
-		wield_scale = {x=1, y=1, z=1},
-		collisionbox = {-0.6, -0.05, -0.6, 0.6, 1, 0.6},
-		onplace_position_adj = -0.45,
-
-		player_rotation = {x=0,y=90,z=0},
-		driver_attach_at = {x=3.5,y=3.7,z=3.5},
-		driver_eye_offset = {x=-4, y=0, z=0},
-		number_of_passengers = 3,
-		passenger_attach_at = {x=3.5,y=3.7,z=-3.5},
-		passenger_eye_offset = {x=4, y=0, z=0},
-
-		passenger2_attach_at = {x=-4,y=3.7,z=3.5},
-		passenger2_eye_offset = {x=-4, y=3, z=0},
-
-		passenger3_attach_at = {x=-4,y=3.7,z=-3.5},
-		passenger3_eye_offset = {x=4, y=3, z=0},
-
-		enable_crash = false,
-
-		drop_on_destroy = {"vehicle_mash:tire 2", "vehicle_mash:windshield",
-			"vehicle_mash:battery", "vehicle_mash:motor"},
-}
-
--- Cloud car (similar from the CAR01 from Vehicle Mash)
-local car_enabled = minetest.settings:get_bool("cloud_items.enable_cloud_car")
-if car_enabled or car_enabled == nil then
-	loadfile(minetest.get_modpath(minetest.get_current_modname()) .. "/car.lua")(table.copy(car_def))
-end
-
 -------------
 -- Crafts --
 -------------
@@ -666,6 +586,7 @@ if minetest.get_modpath("multitools") then
 	})
 end
 
+--[[
 -- Decoration block
 minetest.register_craft({
 	output = "cloud_items:decoration_block 7",
@@ -675,7 +596,7 @@ minetest.register_craft({
 		{"", "", ""},
 	}
 })
-
+--]]
 -- Cooking
 minetest.register_craft({
 	type = "cooking",
