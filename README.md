@@ -57,39 +57,6 @@ This cloud house includes great things such as chests with stuff!
 ![Cloud house (1st floor)](https://user-images.githubusercontent.com/51391473/88605633-18284c80-d040-11ea-8452-3fd8fbbeb8f6.png)
 ![Cloud house (2nd floor)](https://user-images.githubusercontent.com/51391473/88605634-18c0e300-d040-11ea-9bc6-ddfd7dcd3a0e.png)
 
-### Types of cloud
-
-There are 4 types of clouds:
-
-- Normal cloud
-  - Hard to find.
-  - You may find from 1 to 4 ores.
-  - Stronger than diamond.
-  - Damage: 11
-    - Can kill players with 2 hits.
-  - Spawns at 200 blocks and above.
-- Cloud star (coming soon)
-  - Difficult to find.
-  - You may find from 1 to 4 ores.
-  - Stronger than cloud and diamond.
-  - Damage: 12
-    - Can kill players with 2 hits.
-  - Spawns at 350 blocks and above.  
-- Cloud meteor (coming soon)
-  - Very hard to find.
-  - You may find from 1 to 3 ores.
-  - Stronger than cloud (star) and diamond.
-  - Damage: 14
-    - Can kill players with 2 hits.
-  - Spawns at 500 blocks and above.
-- Cloud comet (coming soon)
-  - Very difficult to find.
-  - You may find only 1 ore.
-  - Stronger than all materials.
-  - Damage: 17
-    - Very strong, can kill a player with 2 hits.
-  - Spawns at 800 blocks and above.
-
 ## License and credits
 
 Credits to (in no particular order):
